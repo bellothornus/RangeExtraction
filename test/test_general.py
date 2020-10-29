@@ -17,3 +17,6 @@ def test_from_negative_to_positive():
 
 def test_different_groups():
     assert solution([1,2,3,4,6,7,8,10,11,12,13,14] == "1-4,6-8,10-14")
+
+def test_last_is_single():
+    assert solution([1,2,3,0]) == '1-3,0'
