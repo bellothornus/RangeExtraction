@@ -20,3 +20,6 @@ def test_different_groups():
 
 def test_last_is_single():
     assert solution([1,2,3,0]) == '1-3,0'
+
+def test_incomplete_last_serie():
+    assert solution([-93, -90, -88, -87, -85, -83, -81, -78, -75, -73, -70, -68, -67, -66, -63, -62, -61, -58, -57]) == '-93,-90,-88,-87,-85,-83,-81,-78,-75,-73,-70,-68--66,-63--61,-58,-57'

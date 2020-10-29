@@ -5,12 +5,15 @@ def solution(args):
     #hay un problema y es cuando hay pocos numeros en una serie CHCKED
     #se puede refactorizar quitando la variable last_number_range, es uso de memoria redundante CHECKED 
     #se puede refactorizar cambiando la variable first_number_range por un acumulador para buscar el indice del mismo
-    #se puede refactorizar haciendo qu el condicional tercer que comprueba contenido de la serie se ponga en segundo lugar
+    #se puede refactorizar haciendo que el condicional tercer que comprueba contenido de la serie se ponga en segundo lugar
     check,first_number_range = 0,0
     answer = ""
     for arg in range(len(args)):
         #este condicional si es la ultima serie del array
-        if len(args) == arg+1 and check >= 1:
+        if len(args) == arg+1 and check == 1:
+            answer += str(first_number_range) + "," + str(args[arg])
+            break
+        if len(args) == arg+1 and check >= 2:
             answer += str(first_number_range) + "-" + str(args[arg])
             break
         #esto es para romper el bucle si el indice se pasa
@@ -29,11 +32,14 @@ def solution(args):
         elif args[arg+1] != args[arg]+1 and check >= 2:
             check = 0
             answer += str(first_number_range) + "-" + str(args[arg]) + ","
-        #esto es si no hacen series de 3 (es decir de 2)
+        #esto es si no hacen series de 3 (es decir de 2) antes de acabar el array
         elif args[arg+1] != args[arg]+1 and check == 1:
             answer += str(first_number_range) + "," + str(args[arg]) + ","
             check = 0
-        #esto es si no hay ninguna serie
+        #esto es si no hay ninguna serie (número sólo antes de acabar el array)
         else:
             answer += str(args[arg]) + ","
     return answer
+
+if __name__ == "__main__":
+    assert solution([1,2,3,4,5,6,7]) == "1-7"
