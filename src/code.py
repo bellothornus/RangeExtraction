@@ -40,6 +40,3 @@ def solution(args):
         else:
             answer += str(args[arg]) + ","
     return answer
-
-if __name__ == "__main__":
-    assert solution([1,2,3,4,5,6,7]) == "1-7"
