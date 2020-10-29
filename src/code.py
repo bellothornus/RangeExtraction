@@ -4,8 +4,7 @@ def solution(args):
     #si no, simplemente me printeas el integer sea este negativo o positivo
     #hay un problema y es cuando hay pocos numeros en una serie CHCKED
     #se puede refactorizar quitando la variable last_number_range, es uso de memoria redundante CHECKED 
-    #se puede refactorizar cambiando la variable first_number_range por un acumulador para buscar el indice del mismo
-    #se puede refactorizar haciendo que el condicional tercer que comprueba contenido de la serie se ponga en segundo lugar
+    #se puede refactorizar haciendo que el condicional tercer que comprueba contenido de la serie se ponga en segundo lugar CHECKED
     check,first_number_range = 0,0
     answer = ""
     for arg in range(len(args)):
